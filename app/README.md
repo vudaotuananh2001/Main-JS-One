@@ -132,5 +132,122 @@
     - apply(): giống như call() nhưng khác nhau là apply() cho phép bạn truyền 1 mảng hoặc 1 đối tượng 
     - bind() : cho phép tạo ra 1 hàm ngữ cảnh (this) được cố định và có thể truyền 1 tham số mặc định cho hàm đó. điều này hữu ích đảm bảo rằng 1 hàm sẽ luôn được gọi
                 với 1 ngữ ảnh nhất định. đặc biệt trong tình huống hay sự kiện
-    - JavaScript Closures : đóng gọi các funtion , các biến có thể được lấy từ bên ngoài không nhất thiểt phải truyền vào
-    
+    - JavaScript Closures : đóng gọi các funtion , các biến có thể được lấy từ bên ngoài không nhất thiểt phải truyền vào . Mỗi funtion được coi là đóng gói bằng dấu ngoặc nhọn {} 
+
+# Async (async - await)
+    - callback() : là 1 hàm được truyền vào 1 hàm khác như 1 tham số và sẽ được thực thi sau khi hoàn thành. callback là 1 cách để xử lý bất đồng bộ cho
+                phép quản lý được dòng chảy thực thi của chương trình
+    - Asynchronous : là cách thực thi mã mà không làm ngừng hoạt động của các ứng dụng khác. điều này đặc biệt hữu ích khi trong các tính huống 
+                    cần thực hiện các tác vụ mất thời gian như gọi api, đọc tệp,... 
+    -Promises : là 1 cơ chế mạnh mẽ để sử lý bất đồng bộ , cho phép bạn làm việc với các giá trị mà có thể không có ngay lập tức,....
+            * các trạng thái của Promises :
+                + Pending : trạng thái ban đầu nghĩa là Promises chưa hoàn thành hoặc bị từ chối
+                + Fulfilled : trạng thái thực hiện thành công và gửi trả dữ liệu về
+                + Rejected : trạng thái Promises bị từ chối thường do các lỗi xảy ra
+    - Async/Await : là cách tiếp cận hiện đại sử lý bất đồng bộ trong JS được giới thiệu ES2017 xây dựng trên cơ sở Promises giúp bạn viết mã đồng bộ dễ đọc hơn
+
+# HTML DOM
+    - HTML DOM (Document Object Model) : là mô hình lập trình tài liệu HTML, XML . cho phép bạn truy cập thay đổi nội dung , cấu trúc, nội dung ,...
+                (TẤT CẢ NHỮNG GÌ TRÊN MÀN HÌNH WEB LÀ DOM) => DOM là 1 trang web
+    - DOM Document :
+        * Adding and Deleting Elements : thêm và xoá phần tử
+            . document.createElement(' tên loại thẻ html ') : thêm mới 1 thẻ html
+            . document.removeChild(element)	 : xoá phần tửu ra khỏi phần tử cha của nó
+            . document.appendChild(element) :thêm 1 phần tửu con vào cuối phần tử cha
+            . document.replaceChild(new, old) : thay thế phần tử con bằng phần tử mới
+            . document.write(text) : ghi văn bản trực tiếp vào luồng đầu ra HTML và ghì đè lên toàn bộ tài lại cũ
+    - DOM Form : gồm các thẻ input , action, method
+    - DOM Events
+        + onclick() : khi người dùng click vào thì thực hiện nghiệp vụ
+        + onload() : thực hiện loà body. phải đặt ở trong thẻ body
+        + onchange() : thực hiện đọc value trong thẻ input
+    - DOM navigation : là quá trình truy cập và tương tác với các phần tử trong cấu trúc DOM . Bằng cach sử dụng các thuộc tính và phương thức của DOm,  có thể điều hướng
+                        các nút(nodes), phần tử và quan hệ giữa chúng để điều hướng các nội dung
+
+# BOM (Browser Object Model) : mô hình đối tượng trình duyệt , cho phép tương tác với cở sở tringh duyệt. đối tượng window là đối tượng chính trong BOM
+  1. các thuộc tinh quan trọng
+    - window.document : trả về đối tượng document hiện tại của trang, cho phép bạn truy cập và theo tác với DOM
+    - window.location.href : tra về url tiện tại
+    - window.history.back() : trở về trang trước
+    - window.navigator.userAgent() :thông tin về trình duyệt
+  2. các phương thức quan trọng
+    - window.alert(): Hiển thị hộp thoại thông điệp
+    - window.comfirm(): hiển thị hộp thoại xác nhận tuỳ chọn OK và Cancel
+    - window.prompt() : hiện hộp thoại cho phép người dùng nhập giá trị
+    - window.open() : mở mới 1 cửa sổ mới hoặc tab mới trình duyệt
+    - window.moveTo(x, y) : cho phép bạn di chuyển cửa sổ hiện tại đến vị trí x, y
+    - window.resizeTo(width, height) : thay đổi kích thước của sủu hiện tại 
+     * các thuộc tính screen
+     - screen.width : trả về chiều rộng màn hình
+     - screen.availWidth : trả về chiều rộng khả dụng
+     - screen.availHeight : trả về chiều cao khả dụng
+     - screen.colorDepth : trả về độ sâu màu màn hình (mỗi bit cho mỗi pixel)
+     - screen.pixelDepth : trả về độ sâu pixel màn hình
+     * các thuộc tính location
+     - window.location.href: trả vveef URL hiện tại
+     - window.location.hostname : trả về host name là www hay http
+     - window.location.pathname : trả về đường dẫn path
+     - window.location.search : trả về chuỗi truy vấn strign query
+     - window.location.hash : trả về chuỗi sau dấu #
+        => các phương thức hữu ích
+            + window.location.assign("url"): điều hướng đến đường dẫn url , nhưng không lưu vào lịch sử
+            + window.location.replace("url"): thay thế url hiện tại bằng url mới không lưu vào lịch sử. có nghĩa sẽ không quay lại trang nếu ấn quay lại
+            + window.location.reload(); tải lại trang hiện tại
+    * các thuộc tính history : cho phép truy cập lại các trang trong lịch sử
+
+        - history.back(): trở lại trang trước
+        - history.forward() : tiến trang trước nếu có
+    * các thuộc tính window.navigator 
+
+     -  navigator.userAgent : lấy ra thông tin về trình duyệt, hệ điều hành, phiên bản
+     - navigator.appName : trả về tên trình duyệt
+     - navigator.appVersion : trả về bản trình duyệt
+     - navigator.platform : trả về tên hệ điều hành (window,IOS, Linux,...)
+     - navigator.language : trả về ngôn ngữ của trình duyệt
+     - navigator.onLine : trả về người dùng có online hay không
+
+    * setTimeout : sự kiện thời gian được sử dụng để thực hiênuj các tác vụ theo thời gian hoặc 1 khoảng thời gian nhất định
+                    các ham này rất hữu ích cho việc lặp đi lặp lại, trì hoãn các hoạt động, hoặc lập lịch cho các tác vụ
+        -setTimeout : hàm sẽ được gọi sau 1 khoảng thời gian nhất định tính bằng miliseconds
+        -setInterval : sẽ được gọi liên tục trong khoảng thời gian nhất định tính bằng  miliseconds
+        clearTimeout("tên hàm"): huỷ 1 hàm đã được lên lịch settimeout 
+    +cookie : là 1 phần lưu trữ web cho phép lưu dữ liệu nhỏ trên máy tính người dùng theo dỡi các thông tin. thường được sử dụng để lưu thông tin người dùng, 
+            tuỳ chọn trang web, và phiên đăng nhập
+            => tạo ra 1 cookie gồm: document.cookie = "tênCookie=giáTri; expires=ngàyHếtHạn; path=/";
+                .tênCookie : tên
+                .giáTri : giá trị của cookie 
+                .expires : ngày hết hạn
+                .path : đường dẫn cookie có hiệu lực
+# JS Web APIs
+    1. Web Forms API 
+        Validate API
+            checkValidity() : trả về true nếu phần tử nhập vào hợp lệ
+            setCustomValidity()	: đặt phần tử validationMessage  vào phần tử đầu vào
+    2. localStorage: lưu thông tin cần thiết như thông tin đăng nhập,...
+        ex: localStorage.setItem("name", "John Doe");
+        * các phương thức:
+          setItem(keyname, value)   : lưu trứ thông tin theo keyname truyền vào 1 value
+          getItem(keyname) : lấy ra value được lưu trên localStorage
+          removeItem(keyname) : xoá bỏ 1 keyname - value  trên localStorage
+          clear(): xoá toàn bộ keyname - value  trên localStorage
+    3. Fetch API : là 1 giao thức để thực hiện yêu cầu HTTP (GET, POST, PUT, DELETE)
+        cú pháp: 
+        try{
+            const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                const json = await response.json();
+                console.log(json);
+        }catch (error){
+            console.error(error.message);
+        }
+ 
+# AJAX
+    * Các redyState Value 
+        0  (UNSENT): yêu cầu đã được tạo nhưng chưa gửi 
+        1 (opened) : yêi cầu được mở nhưng chưa được gửi đi
+        2 (HEADERS_RECEIVED) : yêu cầu đã được gửi và máy chủ đã trả về các tiêu đề 
+        3 (LOADING) : dữ liệu đã nhận nhưng chưa hoàn thành
+        4 (DONE) : yêu cầu đã hoàn thành và có thể truy cập vào dữ liệu
+    * lấy dữ liêu về dạng json

@@ -141,6 +141,9 @@ arrChild.unshift("Thêm mới data")
 for (let i = 0; i < arrChild.length; i++) {
     console.log(arrChild[i]);
 }
+const linkNagi = "vu dao tuan anh";
+const resultxxxxx = linkNagi.replace(/ /g, "-");
+console.log(resultxxxxx);
 
 console.log(arrChild.join(" - "));
 const myArr = arrChild.concat(arrChild2);
@@ -303,4 +306,87 @@ cv_xx();
 cv_xx();
 console.log(cv);
 
+// Async
+// call back
+function greet(name, callback) {
+    console.log(`Hello, ${name}!`);
+    callback();
+}
+
+function sayGoodbye() {
+    console.log('Goodbye!');
+}
+
+// Gọi hàm greet và truyền sayGoodbye như một callback
+greet('Alice', sayGoodbye);
+
+
+let newDiv = document.createElement('div')
+newDiv.innerHTML = "đây là div thêm từ  js";
+
+document.getElementById("createImg").src = "../public/images/t-15.png";
+
+function handleDemoCssById() {
+    const styleCss = document.getElementById('demoIdCss');
+    styleCss.style.color = "red";
+    styleCss.style.backgroundColor = "black";
+    styleCss.style.fontSize = "20px";
+    styleCss.style.border = "1px solid white";
+}
+
+function loadBody() {
+    console.log("load trang thành công");
+}
+
+function handleInputOnChange() {
+    const valueInput = document.getElementById("inputDemo");
+    console.log(valueInput.value);
+    valueInput.value = "";
+}
+
+var parent = document.getElementById("parent");
+var firstChild = parent.firstElementChild;
+var lastChild = parent.lastElementChild;
+
+// Thay đổi nội dung của phần tử đầu tiên
+firstChild.textContent = "Nội dung đã thay đổi!";
+
+console.log("Phần tử đầu tiên: ", firstChild.textContent);
+console.log("Phần tử cuối cùng: ", lastChild.textContent);
+
+const parra = document.createElement('p');
+const node1 = document.createTextNode("Đây là phần thêm node vào")
+parra.appendChild(node1);
+const tetla = document.getElementById('div1')
+tetla.appendChild(parra);
+
+function handleConfirm() {
+    window.confirm("Bạn đây ở đây ?");
+    console.log("tiêu đề trang: " + window.document.title);
+    console.log("Url hiện tại: " + window.location.href);
+    const box_name = window.prompt("Nhập tên của bạn:")
+    console.log(box_name);
+    // const link = window.open("https://www.google.com/", "_blank");
+    console.log("chiều rộng màn hình :" + screen.width);
+    console.log("chiều cao màn hình :" + screen.height);
+    console.log("chiều rộng khả dụng :" + screen.availWidth);
+    console.log("chiều cao khả dụng :" + screen.availHeight);
+}
+
+setTimeout(() => {
+    console.log("Hàm này được gọi sau 2 giây");
+}, 2000); // hàm gọi sau 2s
+
+// setInterval(() => {
+//     console.log("Hàm này sẽ gọi sau 1s");
+//     console.log("Vũ Đào Tuấn Anh");
+// }, 1000);
+
+
+// cookie
+document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
+console.log(document.cookie);
+
+localStorage.setItem("name", "John Doe");
+console.log("name localStorage:   " + localStorage.getItem("name"));
 
